@@ -1,0 +1,74 @@
+.crop-stock-card,
+.crop-stock-card *,
+.crop-stock-card *::before,
+.crop-stock-card *::after {
+  box-sizing: border-box;
+}
+
+.crop-stock-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+.crop-stock-card .card-body {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.crop-stock-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.crop-stock-table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  margin-bottom: 0;
+}
+
+.crop-stock-table th,
+.crop-stock-table td {
+  padding: 0.5rem 0.35rem;
+  overflow-wrap: anywhere;
+  vertical-align: middle;
+}
+
+.crop-stock-table th:nth-child(1) {
+  width: 22%;
+}
+
+.crop-stock-table th:nth-child(2) {
+  width: 17%;
+}
+
+.crop-stock-table th:nth-child(3) {
+  width: 33%;
+}
+
+.crop-stock-table th:nth-child(4) {
+  width: 28%;
+}
+
+.crop-stock-table .form-group,
+.crop-stock-submit-cell {
+  margin-bottom: 0;
+}
+
+.crop-stock-table .form-control {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.crop-stock-submit-cell {
+  text-align: center;
+}
+
+@media (max-width: 575.98px) {
+  .crop-stock-table {
+    min-width: 640px;
+  }
+}

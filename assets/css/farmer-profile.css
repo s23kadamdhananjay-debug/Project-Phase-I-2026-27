@@ -1,0 +1,35 @@
+.farmer-profile-info {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0;
+}
+
+.farmer-profile-row {
+  display: grid;
+  grid-template-columns: 135px 1fr;
+  align-items: start;
+}
+
+.farmer-profile-row dt,
+.farmer-profile-row dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.farmer-profile-row dt {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.farmer-profile-row dd {
+  color: #343a40;
+}
+
+@media (max-width: 767.98px) {
+  .row-content > .col-md-4,
+  .row-content > .col-md-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

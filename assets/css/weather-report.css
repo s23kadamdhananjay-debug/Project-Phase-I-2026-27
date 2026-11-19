@@ -1,0 +1,416 @@
+.weather-report-page {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100vh - 5rem);
+  overflow: hidden;
+  padding: clamp(1.5rem, 3vw, 2.75rem) 0 3rem;
+  background: linear-gradient(115deg, #302080 0%, #5032a0 58%, #8054c4 100%);
+}
+
+.weather-report-page::before,
+.weather-report-page::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  content: "";
+  pointer-events: none;
+}
+
+.weather-report-page::before {
+  top: 0.25rem;
+  right: max(-2rem, calc((100vw - 1200px) / 2));
+  width: 9.5rem;
+  height: 9.5rem;
+  box-shadow: -55rem 15rem 0 0 rgba(255, 255, 255, 0.07);
+}
+
+.weather-report-page::after {
+  right: 2%;
+  bottom: -4rem;
+  width: 11rem;
+  height: 11rem;
+  box-shadow: 0 -9rem 0 -1rem rgba(255, 255, 255, 0.14);
+}
+
+.weather-report-page .weather-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1180px;
+}
+
+.weather-page-heading {
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.weather-page-heading h1 {
+  margin: 0;
+  line-height: 1;
+}
+
+.weather-page-heading .weather-eyebrow {
+  display: inline-block;
+  padding: 0.48rem 1rem;
+  border-radius: 999px;
+  background: #f33364;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.weather-card-eyebrow {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #72809a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.weather-forecast-card {
+  overflow: hidden;
+  border: 0;
+  border-radius: 0.35rem;
+  background: #fff;
+  box-shadow: 0 1rem 2.5rem rgba(22, 14, 58, 0.2);
+}
+
+.weather-location-header {
+  padding: 1.5rem clamp(1.25rem, 3.2vw, 2rem);
+  background: #fff;
+}
+
+.weather-location-header .weather-card-eyebrow {
+  display: none;
+}
+
+.weather-location-header h2 {
+  margin: 0;
+  color: #152034;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 600;
+}
+
+.weather-card-content {
+  min-width: 0;
+  padding: clamp(1.1rem, 3.2vw, 2rem);
+  background: #f4f4f7;
+}
+
+.weather-notice {
+  margin-bottom: 1.2rem;
+  padding: 1.15rem clamp(1rem, 3vw, 1.85rem);
+  border-radius: 0.35rem;
+  background: #45d29e;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.weather-report-page .dataTables_wrapper {
+  width: 100%;
+  min-width: 0;
+  color: #4a5870;
+  font-size: 0.94rem;
+}
+
+.weather-report-page .weather-table-controls,
+.weather-report-page .weather-table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.weather-report-page .weather-table-controls {
+  margin-bottom: 0.7rem;
+}
+
+.weather-report-page .weather-table-footer {
+  margin-top: 0.35rem;
+}
+
+.weather-report-page .dataTables_length,
+.weather-report-page .dataTables_filter,
+.weather-report-page .dataTables_info,
+.weather-report-page .dataTables_paginate {
+  float: none !important;
+  margin: 0;
+  padding: 0 !important;
+}
+
+.weather-report-page .dataTables_length label,
+.weather-report-page .dataTables_filter label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: #26354d;
+  font-weight: 400;
+}
+
+.weather-report-page .dataTables_length select,
+.weather-report-page .dataTables_filter input {
+  min-height: 2.45rem;
+  margin: 0 !important;
+  padding: 0.45rem 0.65rem !important;
+  border: 1px solid #bfc2c8 !important;
+  border-radius: 0.25rem !important;
+  background: #fff !important;
+  color: #27344a !important;
+  font: inherit !important;
+  outline: none;
+}
+
+.weather-report-page .dataTables_filter input {
+  width: min(14rem, 52vw) !important;
+}
+
+.weather-report-page .dataTables_length select:focus,
+.weather-report-page .dataTables_filter input:focus {
+  border-color: #6751b8 !important;
+  box-shadow: 0 0 0 0.18rem rgba(103, 81, 184, 0.15);
+}
+
+.weather-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #d5d9de;
+  background: #fff;
+  scrollbar-color: #aaa5c2 #eceaf2;
+  scrollbar-width: thin;
+}
+
+.weather-report-page table.weather-forecast-table {
+  width: 100% !important;
+  min-width: 740px;
+  margin: 0 !important;
+  border: 0 !important;
+  border-collapse: collapse !important;
+  table-layout: fixed;
+  color: #4e607d;
+  font-size: 0.9rem;
+}
+
+.weather-report-page .weather-forecast-table thead th {
+  padding: 0.95rem 0.55rem;
+  border: 1px solid #d5d9de !important;
+  background: #fff;
+  color: #11264a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.45;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.weather-report-page .weather-forecast-table thead th:nth-child(1) { width: 14%; }
+.weather-report-page .weather-forecast-table thead th:nth-child(2) { width: 15%; }
+.weather-report-page .weather-forecast-table thead th:nth-child(3) { width: 18%; }
+.weather-report-page .weather-forecast-table thead th:nth-child(4) { width: 23%; }
+.weather-report-page .weather-forecast-table thead th:nth-child(5) { width: 14%; }
+.weather-report-page .weather-forecast-table thead th:nth-child(6) { width: 16%; }
+
+.weather-report-page .weather-forecast-table tbody td {
+  padding: 0.85rem 0.55rem;
+  border: 1px solid #d5d9de !important;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.weather-report-page .weather-forecast-table tbody tr:nth-child(odd) {
+  background: #e8ebee;
+}
+
+.weather-report-page .weather-forecast-table tbody tr:nth-child(even) {
+  background: #f1f3f5;
+}
+
+.weather-report-page .weather-forecast-table tbody tr:hover {
+  background: #e3e5ee;
+}
+
+.weather-report-page .weather-date,
+.weather-report-page .weather-time,
+.weather-report-page .weather-humidity,
+.weather-report-page .weather-wind {
+  white-space: nowrap;
+}
+
+.weather-temperature-values {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.weather-temperature-high {
+  color: #4e607d;
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+
+.weather-temperature-divider,
+.weather-temperature-low {
+  color: #758198;
+}
+
+.weather-description-cell {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.35rem;
+  text-align: left;
+}
+
+.weather-report-page .weather-icon {
+  display: block;
+  width: 2.45rem;
+  height: 2.45rem;
+  flex: 0 0 2.45rem;
+  object-fit: contain;
+}
+
+.weather-condition-main,
+.weather-condition-detail {
+  display: block;
+  overflow-wrap: anywhere;
+  text-transform: capitalize;
+}
+
+.weather-condition-main {
+  color: #435571;
+  font-weight: 600;
+}
+
+.weather-condition-detail {
+  margin-top: 0.12rem;
+  color: #748098;
+  font-size: 0.78rem;
+}
+
+.weather-report-page .dataTables_paginate .paginate_button {
+  min-width: 2.2rem;
+  margin-left: 0.15rem !important;
+  padding: 0.42rem 0.68rem !important;
+  border: 1px solid transparent !important;
+  border-radius: 0.25rem !important;
+  color: #51457c !important;
+}
+
+.weather-report-page .dataTables_paginate .paginate_button:hover {
+  border-color: #d7d2e7 !important;
+  background: #eeecf5 !important;
+  color: #382a73 !important;
+}
+
+.weather-report-page .dataTables_paginate .paginate_button.current,
+.weather-report-page .dataTables_paginate .paginate_button.current:hover {
+  border-color: #aaa6ae !important;
+  background: #e5e3e7 !important;
+  color: #28334a !important;
+}
+
+.weather-report-page .dataTables_paginate .paginate_button.disabled,
+.weather-report-page .dataTables_paginate .paginate_button.disabled:hover {
+  color: #9298a3 !important;
+  cursor: default !important;
+}
+
+.weather-current-details {
+  margin-top: 1.25rem;
+  color: #51457c;
+}
+
+.weather-current-details summary {
+  width: fit-content;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.weather-widget-panel {
+  display: flex;
+  min-width: 0;
+  min-height: 7rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.8rem;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid #e1e2e8;
+  border-radius: 0.55rem;
+  background: #fff;
+}
+
+#openweathermap-widget-9 {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 5.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#openweathermap-widget-9 > div {
+  max-width: 100% !important;
+}
+
+#openweathermap-widget-9 img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767.98px) {
+  .weather-report-page .weather-table-controls,
+  .weather-report-page .weather-table-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .weather-report-page .dataTables_filter,
+  .weather-report-page .dataTables_filter label {
+    width: 100%;
+  }
+
+  .weather-report-page .dataTables_filter input {
+    width: 100% !important;
+    min-width: 0;
+  }
+
+  .weather-report-page .dataTables_paginate {
+    align-self: flex-start;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .weather-location-header {
+    padding: 1.2rem 1rem;
+  }
+
+  .weather-card-content {
+    padding: 1rem;
+  }
+
+  .weather-notice {
+    padding: 0.9rem 1rem;
+  }
+
+  .weather-report-page .dataTables_length label {
+    flex-wrap: wrap;
+  }
+}

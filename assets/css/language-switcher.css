@@ -1,0 +1,62 @@
+.agri-language-switcher {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  white-space: nowrap;
+}
+
+.agri-language-switcher .agri-language-option {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  padding: 0.35rem 0.55rem;
+}
+
+.agri-language-switcher .agri-language-option:hover,
+.agri-language-switcher .agri-language-option[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-decoration: none;
+}
+
+.agri-language-switcher .agri-language-separator {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.agri-language-switcher--floating {
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.2rem;
+  position: fixed;
+  right: 0.75rem;
+  top: 0.75rem;
+  z-index: 2000;
+}
+
+.agri-language-switcher--floating .agri-language-option {
+  color: #333;
+}
+
+.agri-language-switcher--floating .agri-language-option:hover,
+.agri-language-switcher--floating .agri-language-option[aria-pressed="true"] {
+  background: #e9ecef;
+  color: #222;
+}
+
+.agri-language-switcher--floating .agri-language-separator {
+  color: #777;
+}
+
+@media (max-width: 991.98px) {
+  .agri-language-switcher--nav {
+    justify-content: flex-start;
+    margin: 0.25rem 0.5rem;
+  }
+}
