@@ -11,7 +11,7 @@
 
 | Role | Name | Roll Number | Department |
 | :--- | :--- | :--- | :--- |
-| **Team Member** | Kasralikar Mrudula | — | Computer Science & Engineering |
+| **Team Member** | Kasralikar Mrudula | 121 | Computer Science & Engineering |
 | **Team Member** | Bramanand Gaikwad | **165** | Computer Science & Engineering |
 | **Team Member** | Prajwal Govande | **126** | Computer Science & Engineering |
 | **Team Member** | Dhananjay Kadam | **133** | Computer Science & Engineering |
